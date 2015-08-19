@@ -16,7 +16,7 @@ This application follows the javascript coding standard and all the functionalit
 This project uses the following Technologies...
 
 * [AngularJS](http://www.angularjs.org) - HTML enhanced for web apps!
-* [D3JS](http://www.d3js.org - awesome library to bing life to data!
+* [D3JS](http://www.d3js.org) - awesome library to bing life to data!
 
 ### Installation
 
