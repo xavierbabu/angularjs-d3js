@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html data-ng-app='ngCharts'>
+<head>
+	<!-- Title -->
+	<title>Data Visualization</title>
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+	<div data-ng-controller='chartContainer'>
+		<div class='container'>
+			<div data-ng-if='!data' class='loader'>
+				<img src="images/loader.GIF">
+			</div>
+			<div data-ng-if='data'>
+				<!-- displaying data -->
+				<h4>Streaming Data:</h4>
+				<ol class="breadcrumb">
+					<li data-ng-class="{'active': page==='table'}"><a href="javascript:void(0);" data-ng-click='chooseTab("table")'> Data Table</a></li>
+					<li data-ng-class="{'active': page==='chart'}"><a href="javascript:void(0);" data-ng-click='chooseTab("chart")'> Data Chart</a></li>
+				</ol>
+				<table class='table table-bordered' data-ng-if='page==="table"'>
+					<thead>
+						<tr class="success">
+							<th>S.No</th>
+							<th>Read</th>
+							<th>Precpu Stats (CPU Usage)</th>
+							<th colspan='5'>Cpu Stats (CPU Usage)</th>
+						</tr>
+						<tr class='info'>
+							<th></th>
+							<th></th>
+							<th>Total Usage</th>
+							<th>Total Usage</th>
+							<th>Percpu Usage</th>
+							<th>Usage in Kernal Mode</th>
+							<th>Usage in User Mode</th>
+							<th>System CPU Usage</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-ng-repeat='row in data'>
+							<td data-ng-bind='$index + 1'></td>
+							<td data-ng-bind='row.read'></td>
+							<td data-ng-bind='row.precpu_stats.cpu_usage.total_usage'></td>
+							<td data-ng-bind='row.cpu_stats.cpu_usage.total_usage'></td>
+							<td data-ng-bind='row.cpu_stats.cpu_usage.percpu_usage'></td>
+							<td data-ng-bind='row.cpu_stats.cpu_usage.usage_in_kernelmode'></td>
+							<td data-ng-bind='row.cpu_stats.cpu_usage.usage_in_usermode'></td>
+							<td data-ng-bind='row.cpu_stats.system_cpu_usage'></td>
+						</tr>
+					</tbody>
+				</table>
+				<div  data-ng-if='page==="chart"'>
+					<bars-chart chart-data="data"  ></bars-chart>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Scripts -->
+	<script type="text/javascript" src='js/lib/d3js/d3.min.js'></script>
+	<script type="text/javascript" src='js/lib/angularjs/angular.min.js'></script>
+	<script type="text/javascript" src='js/app.js'></script>
+</body>
+</html>
