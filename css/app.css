@@ -1,0 +1,72 @@
+.chart {
+    background: #eee;
+    padding: 3px;
+}
+
+.chart div {
+  width: 0;
+  transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 5px;
+  color: white;
+  box-shadow: 2px 2px 2px #666;
+}
+
+.bar {
+  /*fill: steelblue;*/
+}
+
+.bar:hover {
+  /*fill: brown;*/
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.tooltip {                                                        
+  background: #eee;
+  color: steelblue;
+  border: solid 1px #d3d3d3;                                               
+  box-shadow: 0 0 5px #999999;                                    
+  display: none;                                                  
+  font-size: 12px;                                                
+  left: 130px;                                                    
+  padding: 10px;                                                  
+  position: absolute;                                             
+  text-align: center;                                             
+  top: 95px;                                                      
+  width: 120px;                                                    
+  z-index: 10;                                                    
+  opacity: 1;
+}
+
+.breadcrumb .active a {
+  color: #000;
+  text-decoration: none;
+  cursor: text;
+}
+
+.loader {
+  text-align: center;
+  margin-top: 200px;
+}
